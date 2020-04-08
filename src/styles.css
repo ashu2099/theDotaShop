@@ -40,3 +40,8 @@
 .img-thumbnail {
   border-color: var(--theme-1);
 }
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: var(--theme-3);
+  background-color: var(--theme-1);
+}

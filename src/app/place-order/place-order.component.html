@@ -45,8 +45,8 @@
   <div class="row mb-4">
     <div class="col-md-4 order-md-2 mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Your cart</span>
-        <span class="badge badge-secondary badge-pill">{{
+        <span class="color-theme">Your cart</span>
+        <span class="badge bg-theme text-white badge-pill">{{
           cartData.length
         }}</span>
       </h4>
@@ -57,20 +57,21 @@
           >
             <div>
               <h6 class="my-0">{{ x.productName }}</h6>
-              <small class="text-muted">Rs. {{ x.productPrice | currency:'INR' }}</small>
+              <small class="text-muted"
+                >{{ x.productPrice | currency: "INR" }}</small
+              >
             </div>
           </li>
         </ng-container>
 
-        <li class="list-group-item d-flex justify-content-between">
+        <li class="list-group-item color-theme d-flex justify-content-between">
           <span>Total (INR)</span>
-          <strong>Rs. {{ totalBill | currency:'INR' }}</strong>
+          <strong> {{ totalBill | currency: "INR" }}</strong>
         </li>
       </ul>
     </div>
 
     <div class="col-md-8 order-md-1">
-
       <h4 class="mb-3" *ngIf="address == 'customAddress'">Billing address</h4>
 
       <form class="needs-validation" novalidate="" (submit)="confirmPurchase()">
@@ -207,7 +208,10 @@
 
         <hr class="mb-4" *ngIf="address == 'customAddress'" />
 
-        <div class="custom-control custom-checkbox" *ngIf="address == 'customAddress'">
+        <div
+          class="custom-control custom-checkbox"
+          *ngIf="address == 'customAddress'"
+        >
           <input type="checkbox" class="custom-control-input" id="save-info" />
           <label class="custom-control-label" for="save-info"
             >Save this information for next time</label
@@ -309,7 +313,7 @@
 
         <hr class="mb-4" />
 
-        <button class="btn btn-primary btn-lg btn-block" type="submit">
+        <button class="btn btn-theme btn-lg btn-block" type="submit">
           Continue to checkout
         </button>
       </form>

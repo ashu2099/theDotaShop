@@ -27,6 +27,9 @@
           <p class="lead">
             {{ selectedProduct.productDesc }}
           </p>
+          <p class="color-theme font-weight-bold">
+            Price: {{ selectedProduct.productPrice | currency: "INR" }}
+          </p>
           <button class="btn btn-theme" (click)="addToCart()">
             Add To Cart
           </button>
