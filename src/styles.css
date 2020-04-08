@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --theme-1: #b44335;
+  --theme-2: #cd5f51;
+  --theme-3: #a83806;
+}
+
+.color-theme {
+  color: var(--theme-1);
+}
+.bg-theme {
+  background-color: var(--theme-1);
+}
+
+.btn-theme {
+  background-color: var(--theme-1);
+  border-color: var(--theme-3);
+  color: white;
+}
+
+.btn-theme:hover {
+  background-color: var(--theme-2);
+  color: white;
+}
+
+.btn-outline-theme {
+  background-color: transparent;
+  border-color: var(--theme-1);
+  color: var(--theme-1);
+}
+
+.btn-outline-theme:hover {
+  color: #fff;
+  background-color: var(--theme-2);
+}
+
+.pointered {
+  cursor: pointer;
+}
+
+.img-thumbnail {
+  border-color: var(--theme-1);
+}

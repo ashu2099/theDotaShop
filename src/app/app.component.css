@@ -1,0 +1,34 @@
+.navbar,
+.navbar-brand,
+.logo-img {
+  transition: 0.5s;
+}
+
+.navbar-big {
+  padding: 0.75rem;
+}
+
+.navbar-big .navbar-brand {
+  font-size: 1.6rem;
+}
+
+.navbar-big .logo-img {
+  width: 30px !important;
+}
+
+.logo-img {
+  width: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.brand-name {
+  vertical-align: middle;
+}
+
+.top-margin {
+  margin-top: 96px;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid white;
+}

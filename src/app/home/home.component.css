@@ -1,0 +1,4 @@
+.card:hover .img-hover {
+  transform: scale(1.25);
+  transition-duration: 0.5s;
+}

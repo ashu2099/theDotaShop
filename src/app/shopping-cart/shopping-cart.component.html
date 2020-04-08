@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-4">
+      <h2 class="display-4 mb-4 color-theme">Shopping Cart</h2>
+      <ul class="list-group mb-4">
+        <ng-container *ngFor="let x of cartData; let i = index;">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-4 col-lg-3 px-0 px-sm-3">
+                <img class="img-fluid rounded" [src]="x.productImage" />
+              </div>
+              <div class="col-8 col-lg-9">
+                <div class="row">
+                  <div class="col-12">
+                    <h4 class="dispay-5">{{ x.productName }}</h4>
+                  </div>
+                  <div class="col-12">
+                    <label for=""
+                      >Price : Rs. {{ x.productPrice | currency: "INR" }}</label
+                    ><br />
+                    <button
+                      type="button"
+                      class="btn btn-md-sm btn-outline-secondary"
+                      (click)="removeFromCart(i)"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ng-container>
+
+        <li class="list-group-item">
+          <h3 class="d-inline-block" *ngIf="this.cartData.length">
+            Total: Rs. {{ totalBill | currency: "INR" }}
+          </h3>
+          <button
+            *ngIf="this.cartData.length"
+            class="btn btn-theme float-right"
+            (click)="placeOrder()"
+          >
+            Place Your Order
+          </button>
+          <h3 class="text-center" *ngIf="!this.cartData.length">
+            Your Cart Is Empty !
+          </h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="container-fluid login-container">
+  <div class="row">
+    <div class="col-12 login-form-2">
+      <h3 class="display-5 mb-0">The Dota Shop</h3>
+      <span class="d-block small text-white text-center">Please Login</span>
+      <form
+        #loginForm="ngForm"
+        class="loginform"
+        (ngSubmit)="submitLogin(loginForm)"
+        autocomplete="off"
+      >
+        <div class="form-group">
+          <label for="userName">User Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="userName"
+            name="userName"
+            #uname="ngModel"
+            [(ngModel)]="userName"
+            placeholder="Enter Username"
+            required
+          />
+          <small *ngIf="uname.invalid && uname.touched" class="form-text"
+            >Please Enter Username.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            #pwd="ngModel"
+            [(ngModel)]="password"
+            placeholder="Enter Password"
+            required
+          />
+          <small *ngIf="pwd.invalid && pwd.touched" class="form-text"
+            >Please Enter Password.</small
+          >
+          <small *ngIf="wrongPass" class="form-text text-white"
+            >Invalid Credentials.</small
+          >
+        </div>
+
+        <div class="form-group text-center">
+          <input
+            type="submit"
+            class="btnSubmit"
+            [disabled]="loginForm.invalid"
+            value="Login"
+          />
+          <br />
+          <button
+            type="button"
+            class="btnSubmitGhost mt-2"
+            (click)="closeModalAndReroute()"
+          >
+            Cancel
+          </button>
+        </div>
+        <div class="form-group text-center">
+          <span class="ForgetPwd">Forget Password?</span><br />
+        </div>
+
+        <span class="text-white small d-block text-center">
+          Just a demo user trying out functionality? Use these as credentials.
+          Username: ashu, pass: 1234
+        </span>
+      </form>
+    </div>
+  </div>
+</div>

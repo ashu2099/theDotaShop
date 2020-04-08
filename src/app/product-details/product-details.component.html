@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row featurette">
+    <div class="col-12 mt-5">
+      <div class="row mb-4">
+        <div class="col-12 d-block d-md-none">
+          <h2 class="display-4 color-theme">
+            Product Details
+          </h2>
+        </div>
+
+        <div class="col-md-5 mb-3">
+          <img
+            class="img-fluid img-thumbnail mx-auto"
+            width="500"
+            height="500"
+            [src]="selectedProduct.productImage"
+          />
+        </div>
+
+        <div class="col-md-7">
+          <h2 class="display-4 color-theme d-none d-md-block">
+            Product Details
+          </h2>
+          <h2 class="disdplay-4" style="color: var(--theme-2);">
+            {{ selectedProduct.productName }}
+          </h2>
+          <p class="lead">
+            {{ selectedProduct.productDesc }}
+          </p>
+          <button class="btn btn-theme" (click)="addToCart()">
+            Add To Cart
+          </button>
+          <button class="btn btn-outline-theme ml-2" [routerLink]="['home']">
+            Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
